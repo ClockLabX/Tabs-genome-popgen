@@ -1,0 +1,27 @@
+// M2
+[PARAMETERS]
+//#isInt? #name  #dist  #min  #max #output/hide?
+//all Ns are in number of haploid individuals
+1  NANC$        unif   10000 10000000    output
+1  N0START$     unif     100   100000    output
+1  N1START$     unif     100   100000    output
+1  T2$       logunif      10  1000000    output
+1  T1$       logunif      10  1000000    output
+1  T0$       logunif      10  1000000    output
+1  N0END$    logunif    1000 10000000    output
+1  N1END$    logunif    1000 10000000    output
+1  N2END$    logunif    1000 10000000    output
+
+[COMPLEX PARAMETERS]
+//ratio of sink/source popsize
+0  RATIO_0$     =     N0START$/N0END$     hide
+0  RATIO_1$     =     N1START$/N1END$     hide
+0  RATIO_2$     =     NANC$/N2END$        hide
+//log of ratios
+0  LOG_0$  =    log(RATIO_0$)             hide
+0  LOG_1$  =    log(RATIO_1$)             hide
+0  LOG_2$  =    log(RATIO_2$)             hide
+//growth rates
+0  R0$          =    LOG_0$/T0$         output
+0  R1$          =    LOG_1$/T1$         output
+0  R2$          =    LOG_2$/T2$         output

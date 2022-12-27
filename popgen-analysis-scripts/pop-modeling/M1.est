@@ -1,0 +1,8 @@
+// *********************
+[PARAMETERS]
+//#isInt? #name  #dist  #min  #max #output/hide?
+//all Ns are in number of haploid individuals
+1  NANC$        unif 10000  5000000    output
+1  TNORTH$      unif 10000  5000000    output
+1  TCENTRAL$    unif 10000  5000000    output
+[COMPLEX PARAMETERS]

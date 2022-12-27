@@ -1,0 +1,20 @@
+// M3
+[PARAMETERS]
+//#isInt? #name  #dist  #min  #max #output/hide?
+//all Ns are in number of haploid individuals
+1  NANC$        unif   10000 10000000    output
+1  N1END$       unif   10000 10000000    output
+1  N2END$       unif   10000 10000000    output
+1  N0END$       unif   10000 10000000    output
+1  N1START$     unif   10000 10000000    output
+1  N0START$     unif   10000 10000000    output
+1  T2$       logunif      10  1000000    output
+1  T1$       logunif      10  1000000    output
+1  T0$       logunif      10  1000000    output
+1  T1DIFF$   logunif      10  1000000      hide
+1  T0DIFF$   logunif      10  1000000      hide
+
+[COMPLEX PARAMETERS]
+//time diff from resize and split
+1  T1OUT$      =     T1$+T1DIFF$         output
+1  T0OUT$      =     T0$+T0DIFF$         output
